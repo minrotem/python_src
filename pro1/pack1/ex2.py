@@ -1,68 +1,77 @@
-def inputfunc():
-    datas = [
-        "새우깡,15",
-        "감자깡,20",
-        "양파깡,10",
-        "새우깡,30",
-        "감자깡,25",
-        "양파깡,40",
-        "새우깡,40",
-        "감자깡,10",
-        "양파깡,35",
-        "새우깡,50",
-        "감자깡,60",
-        "양파깡,20",
-    ]
-    return datas
+# 연산자
+v1 = 3   # 치환 연산자
+v1 = v2 = v3 = 5
+print(v1, v2, v3)
+print('출력1', end = ' ')
+print('출력2')
+print('출력3')
 
-def processfunc(datas):
-    pt = {
-        "새우깡": 450,
-        "감자깡": 300,
-        "양파깡": 350
-    }
+v1, v2 = 10, 20
+print(v1, v2)
+v2, v1 = v1, v2
+print(v1, v2)
 
-    qq = {
-        "새우깡": 0,
-        "감자깡": 0,
-        "양파깡": 0
-    }
-    aa = {
-        "새우깡": 0,
-        "감자깡": 0,
-        "양파깡": 0
-    }
+print('값 할당 : packing 연산')
+v1 = 1,2,3,4,5   # v1 = (1,2,3,4,5)
+v1 = [1,2,3,4,5]   
+*v1, v2 = [1,2,3,4,5]
+print(v1, '  ', v2)
+# v1, v2* = [1,2,3,4,5]  # SyntaxError: invalid syntax
+*v1, v2, v3 = [1,2,3,4,5]
+print(v1, '  ', v2, ' ', v3)
 
-    tq = 0
-    ta = 0
+print()
+print(format(1.5678, '10.3f'))
+print('나는 나이가 %d 이다.'%23)
+print('나는 나이가 %s 이다.'%'스물셋')
+print('나는 나이가 %d 이고 이름은 %s이다.'%(23, '홍길동'))
+print('나는 나이가 %s 이고 이름은 %s이다.'%(23, '홍길동'))
+print('나는 키가 %f이고, 에너지가 %d%%.'%(177.7, 100))
+print('이름은 {0}, 나이는 {1}'.format('한국인', 33))
+print('이름은 {}, 나이는 {}'.format('신선해', 33))
+print('이름은 {1}, 나이는 {0}'.format(34, '강나루'))
+abc = 123
+print(f"abc의 값은 {abc}임")
+# print()
+print('\n\n본격적 연산 ---------')  # \n, \b, \t ...
+print(5 + 3, 5 - 3, 5 * 3, 5 / 3, 5 // 3, 5 % 3, 3 ** 3)
+#      8     2    15  1.6666666666666667   1   2   27
+print(divmod(5, 3), ' ', 5 % 3)
+result = 3 + 4 * 5 + (2 + 3) / 2 
+print(result)   # () -> ** -> 단항 -> 산술(*,/ -> +,-) -> 관계 -> 논리(not -> and -> or) -> =
 
-    print("상품명   수량   단가   금액")
-    print("-" * 35)
+print(5 >= 3, 5 == 3, 5 != 3)
 
-    for data in datas:
-        name, qty = data.split(",")
-        qty = int(qty)
+print(5 > 3 and 4 < 3, 5 > 3 or 4 < 3, not(5 >= 3))
+print(True or False and False)
+print(True and False or False)
 
-        price = pt[name]
+print( 4 + 5 )  # 산술연산
+print( '4' + "5" )  # 문자열 더하기 연산
+print('한' + '국' + "만세")
+print("한국" * 5)
 
-        amount = qty * price
+print('누적')
+a = 10
+a = a + 1
+a += 1    #  -= , *=, /=
+print(f"a는 {a}")
+# print(a--)   # ++, -- : 증감 연산자 X
+print(--a)
+print(-a)
+print(a * -1)
 
-        print(f"{name:<6} {qty:<6} {price:<6} {amount}")
+# print(('1' + '1') + 1)   # TypeError
+print(int('1'+ '1') + 1)   # 12    int(문자열) -> 정수화
+print(float('1'+ '1') + 1) # 12.0
+# print((1 + 1) + '1')       # TypeError
+print(str(1 + 1) + '1')    #  21   str(수자) -> 문자화
+print('boolean 처리 : ', bool(True), bool(False))
+print(bool(1), bool(12.3), bool('ok'), bool([12]))
+print(bool(0), bool(0.0), bool(''), bool([]), bool(None))
 
-        qq[name] += qty
-        aa[name] += amount
-
-        tq += qty
-        ta += amount
-
-    print("\n소계")
-    for name in pt:
-        print(f"{name} : {qq[name]}건   소계액 : {aa[name]}원")
-
-    print("\n총계")
-    print(f"총 건수 : {tq}")
-    print(f"총 액  : {ta}원")
-
-
-datas = inputfunc()
-processfunc(datas)
+# r 선행문자
+print('aa\tbb')
+print('aa\nbb')
+print(r'aa\tbb')
+print(r'aa\nbb')

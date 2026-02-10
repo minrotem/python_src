@@ -1,2 +1,2 @@
-# python_src
-Git Test
+# pythonsou
+파이썬 학습

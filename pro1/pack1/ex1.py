@@ -1,52 +1,51 @@
-def inputfunc():
-    datas = [
-        [1, "강나루", 1500000, 2010],
-        [2, "이바다", 2200000, 2018],
-        [3, "박하늘", 3200000, 2005],
-    ]
-    return datas
+var1 = "안녕 파이썬"
+print(var1)   # 이건 주석
+"""
+여러 
+줄 주석
+"""
+var1 = 5;
+var1 = 10
+var1 = 5.6
+print(var1)
+var2 = var1
+print(var1, var2)
+var3 = 7
+print(var1, var2, var3)
+print(id(var1), id(var2), id(var3))
+Var3 = 8
+print(var3, Var3)
 
-def processfunc(datas):
-    CURRENT_YEAR = 
+a = 5
+b = a
+c = 5
+print(a, b, c)
+print(a is b, a == b)  # is:주소 비교 연산, ==:값 비교연산
+print(b is c, b == c)
+aa = [5]
+bb = [5]
+print(aa, bb)
+print(aa is bb, aa == bb)
 
-    for data in datas:
-        emp_no, name, base_pay, hire_year = data
+print('------')   # print("------")
+import keyword  # 키워드 목록 확인용 모듈 읽기
+print('예약어 목록:', keyword.kwlist)
 
-        work_years = CURRENT_YEAR - hire_year
-
-        if work_years <= 3:
-            bonus = 150000
-        elif work_years <= 8:
-            bonus = 450000
-        else:
-            bonus = 1000000
-
-        salary = base_pay + bonus
-
-        if salary >= 3000000:
-            tax_rate = 0.5
-        elif salary >= 2000000:
-            tax_rate = 0.3
-        else:
-            tax_rate = 0.15
-
-        tax = int(salary * tax_rate)
-        net_pay = salary - tax
-
-        data.append(work_years)
-        data.append(bonus)
-        data.append(tax)
-        data.append(net_pay)
-
-    print("사번  이름    기본급    근무년수  근속수당  공제액    수령액")
-    print("-" * 75)
-
-    for d in datas:
-        print(f"{d[0]:<4} {d[1]:<6} {d[2]:<8} {d[4]:<8} {d[5]:<8} {d[6]:<8} {d[7]}")
-
-    print("-" * 75)
-    print(f"처리 건수 : {len(datas)} 건")
+print('type(자료형) 확인')
+kbs = 9
+print(isinstance(kbs, int))
+print(isinstance(kbs, float))
+print(5, type(5))  # 5 <class 'int'>
+print(5.3, type(5.3)) 
+print(3 + 4j, type(3 + 4j)) 
+print(True, type(True))
+print('good', type('good'))
+print((1,), type((1,)))
+print([1], type([1]))
+print({1}, type({1}))
+print({'k':1}, type({'k':1}))
 
 
-datas = inputfunc()
-processfunc(datas)
+
+
+
